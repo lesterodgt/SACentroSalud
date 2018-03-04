@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws_centro_salud_2.sa/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws_centro_salud_2.sa/">
+
+<xs:element name="ConsultarRecetaCS2" type="tns:ConsultarRecetaCS2"/>
+
+<xs:element name="ConsultarRecetaCS2Response" type="tns:ConsultarRecetaCS2Response"/>
+
+<xs:element name="IngresoAtencionMedicaCS2" type="tns:IngresoAtencionMedicaCS2"/>
+
+<xs:element name="IngresoAtencionMedicaCS2Response" type="tns:IngresoAtencionMedicaCS2Response"/>
+
+<xs:element name="IngresoCitaCS2" type="tns:IngresoCitaCS2"/>
+
+<xs:element name="IngresoCitaCS2Response" type="tns:IngresoCitaCS2Response"/>
+
+<xs:element name="IngresoDiagnosticoCS2" type="tns:IngresoDiagnosticoCS2"/>
+
+<xs:element name="IngresoDiagnosticoCS2Response" type="tns:IngresoDiagnosticoCS2Response"/>
+
+<xs:element name="IngresoMedicoCS2" type="tns:IngresoMedicoCS2"/>
+
+<xs:element name="IngresoMedicoCS2Response" type="tns:IngresoMedicoCS2Response"/>
+
+<xs:element name="IngresoPacienteCS2" type="tns:IngresoPacienteCS2"/>
+
+<xs:element name="IngresoPacienteCS2Response" type="tns:IngresoPacienteCS2Response"/>
+
+<xs:element name="IngresoRecetaCS2" type="tns:IngresoRecetaCS2"/>
+
+<xs:element name="IngresoRecetaCS2Response" type="tns:IngresoRecetaCS2Response"/>
+
+<xs:complexType name="ConsultarRecetaCS2">
+<xs:sequence>
+<xs:element name="Receta" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarRecetaCS2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoAtencionMedicaCS2">
+<xs:sequence>
+<xs:element name="Atenciones" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoAtencionMedicaCS2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoMedicoCS2">
+<xs:sequence>
+<xs:element name="Medicos" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoMedicoCS2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoDiagnosticoCS2">
+<xs:sequence>
+<xs:element name="Diagnosticos" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoDiagnosticoCS2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoRecetaCS2">
+<xs:sequence>
+<xs:element name="Recetas" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoRecetaCS2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoPacienteCS2">
+<xs:sequence>
+<xs:element name="Pacientes" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoPacienteCS2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoCitaCS2">
+<xs:sequence>
+<xs:element name="Citas" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IngresoCitaCS2Response">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

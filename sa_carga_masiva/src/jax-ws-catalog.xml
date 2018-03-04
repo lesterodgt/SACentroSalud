@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/WS_CENTRO_SALUD_2/WS?WSDL" uri="wsdl/localhost_8080/WS_CENTRO_SALUD_2/WS.wsdl"/>
+    <system systemId="http://localhost:8080/WS_CENTRO_SALUD_2/WS?xsd=1" uri="wsdl/localhost_8080/WS_CENTRO_SALUD_2/WS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WS_FARMACIA_2/WSF?WSDL" uri="wsdl/localhost_8080/WS_FARMACIA_2/WSF.wsdl"/>
+    <system systemId="http://localhost:8080/WS_FARMACIA_2/WSF?xsd=1" uri="wsdl/localhost_8080/WS_FARMACIA_2/WSF.xsd_1.xsd"/>
+</catalog>
