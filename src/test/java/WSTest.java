@@ -16,9 +16,9 @@ import sa.ws_centro_salud_2.WS;
  *
  * @author scxal
  */
-public class PruebasUnitarias {
+public class WSTest {
     
-    public PruebasUnitarias() {
+    public WSTest() {
     }
     
     @BeforeClass
