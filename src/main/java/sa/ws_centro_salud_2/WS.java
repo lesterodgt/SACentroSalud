@@ -353,7 +353,7 @@ public class WS {
             return obj.toString();
             }catch(Exception e){ 
                 System.out.println(e);
-                return "{}";
+                return "{"+e.toString()+"}";
             }
     }
 
