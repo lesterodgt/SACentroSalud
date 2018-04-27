@@ -37,7 +37,7 @@ public class WS {
         try{  
             Class.forName("com.mysql.jdbc.Driver");  
             Connection con=DriverManager.getConnection(  
-            bd,"root","grupo2sa");  
+            bd,"sql2232532","cR8%xR7!");  
             Statement stmt=con.createStatement();
             for(int a = 0; a < pacientes.length();a++){
                 JSONObject paciente = (JSONObject)pacientes.get(a);
@@ -77,7 +77,7 @@ public class WS {
         try{  
             Class.forName("com.mysql.jdbc.Driver");  
             Connection con=DriverManager.getConnection(  
-            bd,"root","grupo2sa");  
+            bd,"sql2232532","cR8%xR7!");  
             Statement stmt=con.createStatement();
             for(int a = 0; a < medicos.length();a++){
                 JSONObject medico = (JSONObject)medicos.get(a);
@@ -114,7 +114,7 @@ public class WS {
         try{  
             Class.forName("com.mysql.jdbc.Driver");  
             Connection con=DriverManager.getConnection(  
-            bd,"root","grupo2sa");  
+            bd,"sql2232532","cR8%xR7!");  
             Statement stmt=con.createStatement();
             for(int a = 0; a < diagnosticos.length();a++){
                 JSONObject diagnostico = (JSONObject)diagnosticos.get(a);
@@ -148,7 +148,7 @@ public class WS {
         try{  
             Class.forName("com.mysql.jdbc.Driver");  
             Connection con=DriverManager.getConnection(  
-            bd,"root","grupo2sa");  
+            bd,"sql2232532","cR8%xR7!");  
             Statement stmt=con.createStatement();
             for(int a = 0; a < citas.length();a++){
                 JSONObject cita = (JSONObject)citas.get(a);
@@ -181,7 +181,7 @@ public class WS {
         try{  
             Class.forName("com.mysql.jdbc.Driver");  
             Connection con=DriverManager.getConnection(  
-            bd,"root","grupo2sa");  
+            bd,"sql2232532","cR8%xR7!");  
             Statement stmt=con.createStatement();
             for(int a = 0; a < atenciones.length();a++){
                 JSONObject atencion = (JSONObject)atenciones.get(a);
@@ -214,7 +214,7 @@ public class WS {
         try{  
             Class.forName("com.mysql.jdbc.Driver");  
             Connection con=DriverManager.getConnection(  
-            bd,"root","grupo2sa");  
+            bd,"sql2232532","cR8%xR7!");  
             Statement stmt=con.createStatement();
             ResultSet resultSet = stmt.executeQuery("select * from RECETA where idRECETA="+Receta+";");
             if(!resultSet.next()){
@@ -241,7 +241,7 @@ public class WS {
         try{  
             Class.forName("com.mysql.jdbc.Driver");  
             Connection con=DriverManager.getConnection(  
-            bd,"root","grupo2sa");  
+            bd,"sql2232532","cR8%xR7!");  
             Statement stmt=con.createStatement();
             for(int a = 0; a < recetas.length();a++){
                 JSONObject receta = (JSONObject)recetas.get(a);
