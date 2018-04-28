@@ -338,7 +338,7 @@ public class WS {
             while(resultSet3.next()){
                 obj1.put("Fecha", resultSet3.getString("ATENCION_MEDICA.Fecha"));
                 obj1.put("Motivo", resultSet3.getString("ATENCION_MEDICA.Motivo"));
-                ResultSet resultSet = stmt.executeQuery("select * from ATENCION_MEDICA,DIAGNOSTICO where ATENCION_MEDICA.idATENCION_MEDICA="+resultSet3.getString("ATENCION_MEDICA.idATENCION_MEDICA")+" ATENCION_MEDICA.DIAGNOSTICO=DIAGNOSTICO.idDIAGNOSTICO;");
+                ResultSet resultSet = stmt.executeQuery("select * from ATENCION_MEDICA,DIAGNOSTICO where ATENCION_MEDICA.idATENCION_MEDICA="+resultSet3.getString("ATENCION_MEDICA.idATENCION_MEDICA")+" and ATENCION_MEDICA.DIAGNOSTICO=DIAGNOSTICO.idDIAGNOSTICO;");
                 org.json.simple.JSONArray diagnosticos = new org.json.simple.JSONArray();
                 while(resultSet.next()){
                     JSONObject obj3 = new JSONObject();
