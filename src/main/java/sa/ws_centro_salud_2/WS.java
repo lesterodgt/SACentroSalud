@@ -318,37 +318,47 @@ public class WS {
             Connection con=DriverManager.getConnection(  
             bd,"sql2232532","cR8%xR7!");  
             Statement stmt=con.createStatement();
+            Statement stmt1=con.createStatement();
             ResultSet resultSet1 = stmt.executeQuery("select * from PACIENTE where DPI=\""+ent.getString("DPI")+"\";");
             Date date1 = new Date();
             System.out.println(dateFormat.format(date1));
             org.json.simple.JSONArray historial = new org.json.simple.JSONArray();
             JSONObject obj = new JSONObject();
             while(resultSet1.next()){
-                obj.put("dpi", resultSet1.getString("DPI"));
-                obj.put("nombre", resultSet1.getString("Nombre"));
-                obj.put("apellido", resultSet1.getString("Apellido"));
-                obj.put("celular", resultSet1.getString("Celular"));
-                obj.put("telefono", resultSet1.getString("Télefono"));
+                obj.put("Exito","1");
+                obj.put("DPI", resultSet1.getString("DPI"));
+                obj.put("Nombre", resultSet1.getString("Nombre"));
+                obj.put("Apellido", resultSet1.getString("Apellido"));
+                obj.put("Celular", resultSet1.getString("Celular"));
+                obj.put("Telefono", resultSet1.getString("Télefono"));
+                obj.put("Fecha_Nacimiento",resultSet1.getString("Fecha_Nac"));
             }
-            ResultSet resultSet = stmt.executeQuery("select * from PACIENTE,CITA,ATENCION_MEDICA,DIAGNOSTICO where PACIENTE.DPI=\""+ent.getString("DPI")+"\" and PACIENTE.idPACIENTE=CITA.PACIENTE and CITA.idCITA=ATENCION_MEDICA.CITA and ATENCION_MEDICA.idATENCION_MEDICA=DIAGNOSTICO.idDIAGNOSTICO;");
-            while(resultSet.next()){
-                JSONObject obj1 = new JSONObject();
-                obj1.put("fecha", resultSet.getString("ATENCION_MEDICA.Fecha"));
-                obj1.put("motivo", resultSet.getString("ATENCION_MEDICA.Motivo"));
-                obj1.put("diagnostico", resultSet.getString("DIAGNOSTICO.Enfermedad"));
+            JSONObject obj1 = new JSONObject();
+            ResultSet resultSet3 = stmt1.executeQuery("select * from PACIENTE,CITA,ATENCION_MEDICA where DPI=\""+ent.getString("DPI")+"\" and PACIENTE.idPACIENTE=CITA.PACIENTE and CITA.idCITA=ATENCION_MEDICA.CITA");
+            while(resultSet3.next()){
+                obj1.put("Fecha", resultSet3.getString("ATENCION_MEDICA.Fecha"));
+                obj1.put("Motivo", resultSet3.getString("ATENCION_MEDICA.Motivo"));
+                ResultSet resultSet = stmt.executeQuery("select * from ATENCION_MEDICA,DIAGNOSTICO where ATENCION_MEDICA.idATENCION_MEDICA="+resultSet3.getString("ATENCION_MEDICA.idATENCION_MEDICA")+"ATENCION_MEDICA.DIAGNOSTICO=DIAGNOSTICO.idDIAGNOSTICO;");
+                org.json.simple.JSONArray diagnosticos = new org.json.simple.JSONArray();
+                while(resultSet.next()){
+                    JSONObject obj3 = new JSONObject();
+                    obj3.put("Diagnostico", resultSet.getString("DIAGNOSTICO.Enfermedad"));
+                    diagnosticos.add(obj3);
+                }
+                obj1.put("Diagnosticos",diagnosticos);
                 historial.add(obj1);
             }
             ResultSet resultSet2 = stmt.executeQuery("select * from TRASLADO_PACIENTE where DPI=\""+ent.getString("DPI")+"\";");
             org.json.simple.JSONArray traslados = new org.json.simple.JSONArray();
             while(resultSet2.next()){
-                JSONObject obj1 = new JSONObject();
-                obj1.put("fecha", resultSet2.getString("Fecha"));
-                obj1.put("origen", resultSet2.getString("Origen"));
-                obj1.put("destino", resultSet2.getString("Destino"));
-                traslados.add(obj1);
+                JSONObject obj3 = new JSONObject();
+                obj3.put("Fecha", resultSet2.getString("Fecha"));
+                obj3.put("Origen", resultSet2.getString("Origen"));
+                obj3.put("Destino", resultSet2.getString("Destino"));
+                traslados.add(obj3);
             }
-            obj.put("historial",historial);
-            obj.put("traslados", traslados);
+            obj.put("Historial",historial);
+            obj.put("Traslados", traslados);
             System.out.println(obj.toString());
             return obj.toString();
             }catch(Exception e){ 
