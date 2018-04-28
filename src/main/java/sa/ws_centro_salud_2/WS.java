@@ -363,7 +363,7 @@ public class WS {
             return obj.toString();
             }catch(Exception e){ 
                 System.out.println(e);
-                return "{"+e.toString()+"}";
+                return "{\"Error:\":\""+e.toString()+"\",\"Exito\":\"0\"}";
             }
     }
 
