@@ -360,6 +360,7 @@ public class WS {
             obj.put("Historial",historial);
             obj.put("Traslados", traslados);
             System.out.println(obj.toString());
+            con.close();
             return obj.toString();
             }catch(Exception e){ 
                 System.out.println(e);
@@ -432,6 +433,7 @@ public class WS {
                 diagnosticos.add(diagnostico);
             } 
             obj.put("diagnostico",diagnosticos);
+            con.close();
             return obj.toString();
             }catch(Exception e){ 
                 System.out.println(e);
