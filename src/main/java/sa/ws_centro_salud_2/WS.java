@@ -406,21 +406,22 @@ public class WS {
 "	) as SUB)\n" +
 ") AS QRY \n" +
 "ORDER BY QRY.ID;");
+            JSONObject obj = new JSONObject();
+            obj.put("Exito", "1");
             org.json.simple.JSONArray diagnosticos = new org.json.simple.JSONArray();
             while(resultSet.next()){
                 JSONObject diagnostico = new JSONObject();
-                diagnostico.put("diagnostico",resultSet.getString("ID"));
-                diagnostico.put("nombre",resultSet.getString("Nombre"));
-                diagnostico.put("rango1",resultSet.getString("0-5 años"));
-                diagnostico.put("rango2",resultSet.getString("6-15 años"));
-                diagnostico.put("rango3",resultSet.getString("22-45 años"));
-                diagnostico.put("rango4",resultSet.getString("46-60 años"));
-                diagnostico.put("rango5",resultSet.getString(">= 61 años"));
-                diagnostico.put("total",resultSet.getString("total"));
+                diagnostico.put("Id",resultSet.getString("ID"));
+                diagnostico.put("Nombre",resultSet.getString("Nombre"));
+                diagnostico.put("0-5",resultSet.getString("0-5 años"));
+                diagnostico.put("6-15",resultSet.getString("6-15 años"));
+                diagnostico.put("22-45",resultSet.getString("22-45 años"));
+                diagnostico.put("46-60",resultSet.getString("46-60 años"));
+                diagnostico.put(">60",resultSet.getString(">= 61 años"));
+                diagnostico.put("Total",resultSet.getString("total"));
                 diagnosticos.add(diagnostico);
-            }
-            JSONObject obj = new JSONObject();
-            obj.put("despacho",diagnosticos);
+            } 
+            obj.put("diagnostico",diagnosticos);
             return obj.toString();
             }catch(Exception e){ 
                 System.out.println(e);
